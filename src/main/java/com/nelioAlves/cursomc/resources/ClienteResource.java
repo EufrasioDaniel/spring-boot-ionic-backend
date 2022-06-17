@@ -17,8 +17,8 @@ public class ClienteResource {
 	private ClienteService service;
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET) //Responde pelo get no end point categorias
-	public ResponseEntity<?> find(@PathVariable Integer id) { //Reponseentity é um objeto que tem varias informações de resposta http
-		Cliente obj = service.buscar(id);
+	public ResponseEntity<Cliente> find(@PathVariable Integer id) { //Reponseentity é um objeto que tem varias informações de resposta http
+		Cliente obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
 }
